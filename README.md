@@ -15,3 +15,10 @@ Before launch, replace the placeholder Buy and Telegram buttons in `script.js` /
 ## Favicon and social-sharing package
 
 This release includes browser favicons, Apple and Android home-screen icons, a web manifest, and a 1200×630 Open Graph image for X, Telegram, Discord, and other link previews.
+
+
+## NodeReal donation data
+
+The dashboard now uses NodeReal directly and no longer depends on BscScan/Etherscan API access. The Vercel function reads the live Flap TaxProcessor balance and calls `nr_getAssetTransfers` for outgoing native BNB distributions.
+
+The included NodeReal endpoint works as a fallback. For better key hygiene, add your endpoint in Vercel as an environment variable named `NODEREAL_RPC_URL`; it will override the fallback automatically.
